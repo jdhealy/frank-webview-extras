@@ -4,9 +4,9 @@ require File.expand_path('../lib/frank-webview-extras/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["J.D. Healy"]
   gem.email         = ["jdhealy@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Extras for Frank for automating UIWebViews}
+  gem.summary       = %q{Extras for Frank for automating UIWebViews}
+  gem.homepage      = "github.com/jdhealy/frank-webview-extras"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
