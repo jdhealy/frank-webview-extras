@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["jdhealy@gmail.com"]
   gem.description   = %q{Extras for Frank for automating UIWebViews}
   gem.summary       = %q{Extras for Frank for automating UIWebViews}
-  gem.homepage      = "github.com/jdhealy/frank-webview-extras"
+  gem.homepage      = "https://github.com/jdhealy/frank-webview-extras"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
