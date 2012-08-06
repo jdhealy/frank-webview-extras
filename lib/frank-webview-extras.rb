@@ -55,7 +55,7 @@ module WebView
 
 		unless map == ""
 			unless map.nil?
-				JSON.parse map
+				return JSON.parse map
 			else
 				raise "No UIWebView found."
 			end
@@ -138,7 +138,7 @@ module WebView
 			'functions' => funcs
 			} )
 
-		puts [ query, json_options.inspect ]
+		puts [ query, json_options.inspect ] if self.DEBUG
 		
 		run_coffee_file "iterate", {'query' => query, 'json_options.inspect' => json_options.inspect }
 
