@@ -107,7 +107,7 @@ module WebView
 		run file, {:coffeescript => false}
 	end
 
-	def self.outerHTML (query) # class method
+	def self.outerHTML (query='document.body') # class method
 		script = CoffeeScript.compile(query, :bare => true)
 		iterate(script, {:property => 'outerHTML'})
 	end
@@ -115,6 +115,22 @@ module WebView
 	def self.click (query) # class method
 		script = CoffeeScript.compile(query, :bare => true)
 		iterate(script, {:functions => ['outerHTML.length', 'click']})
+	end
+
+	def self.set_text (query, text) # class method
+
+		# Add query checking method?
+		query = coffee query
+
+		results = run_coffee_file "set_text", {
+			'query' => query, 
+			'text' => %Q['] + JSON.generate("text" => text).gsub(/[']/, '\\\\\'') + %Q[']
+		}
+
+		puts 'Looks like it worked' if results['result'] == text and self.DEBUG
+		# What do we want to do if the result isn't the text?
+
+		return results
 	end
 
 	def self.iterate (query, options={:property => 'outerHTML'})

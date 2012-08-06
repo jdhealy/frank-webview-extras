@@ -12,6 +12,6 @@ do ->
 				fn = currentFunction.toString()
 				currentFunction = currentFunction.caller
 				fname = fn.substring(fn.indexOf("function") + 8, fn.indexOf("(")).trim() || "anonymous"
-				alert fname
+				# alert fname
 				fname
-		JSON.stringify { error: e, callstack: callstack() } #, lineNumber: e.lineNumber, keys: e.getOwnPropertyNames?() 
+		JSON.stringify { success: false, error: e, callstack: callstack() } #, lineNumber: e.lineNumber, keys: e.getOwnPropertyNames?() 
