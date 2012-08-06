@@ -1,24 +1,16 @@
 # Frank::Webview::Extras
 
-TODO: Write a gem description
+Run CoffeeScript and Javascript as part of your Frank feature files and in the console.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'frank-webview-extras'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install frank-webview-extras
+Use `bundle`.
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+	WebView.run "document.body.outerHTML"
+```
 
 ## Contributing
 
