@@ -1,15 +1,17 @@
-JSON.stringify do ->
-	# try_stringify = ->
-	# 	result = null
-	# 	try
-	# 		result = (JSON.stringify arg for arg in arguments)
-	# 	catch e
-	# 		alert "error: #{e.message}"
-	# 		result = e
-	# 	return result
+do ->
 	try 
 		i = `insertable#{script}`
-		success: i?
-		result: i
+		do -> JSON.stringify 
+			success: i?
+			result: i
 	catch e
-		{ error: e } #, lineNumber: e.lineNumber, keys: e.getOwnPropertyNames?() 
+		callstack = ->
+			currentFunction = arguments.callee.caller
+
+			while currentFunction
+				fn = currentFunction.toString()
+				currentFunction = currentFunction.caller
+				fname = fn.substring(fn.indexOf("function") + 8, fn.indexOf("(")).trim() || "anonymous"
+				alert fname
+				fname
+		JSON.stringify { error: e, callstack: callstack() } #, lineNumber: e.lineNumber, keys: e.getOwnPropertyNames?() 
