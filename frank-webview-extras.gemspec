@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/frank-webview-extras/version', __FILE__)
+#require File.expand_path('../lib/frank-webview-extras/version', __FILE__)
+$:.unshift File.expand_path("../lib", __FILE__)
+require 'frank-webview-extras/version'
 
 Gem::Specification.new do |gem|
   gem.authors       = ["J.D. Healy"]
